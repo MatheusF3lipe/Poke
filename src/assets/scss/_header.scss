@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+
+@mixin header{
+    max-width: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+@mixin fonte {
+    font-family: 'Mouse Memoirs';
+    font-size: $titulo;
+    color: white;
+}
