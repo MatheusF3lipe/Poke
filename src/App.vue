@@ -7,9 +7,10 @@
     </div>
 
     <div class="container"  >
-        <cardPokemon v-for="i in pokemons" :key="i.id" 
-        :name="i.name" 
-        src="./assets/image/pok.webp"
+        <cardPokemon v-for="i in pokemons" 
+        :key="i.id" 
+        :name="i.name"
+        :image="image(i.name)"
         />
         
         
@@ -23,6 +24,7 @@ import MyHeader from "./components/header";
 import cardPokemon from "./components/card.vue";
 import api from "@/services/api";
 
+
 export default {
   name: "App",
   components: {
@@ -32,22 +34,24 @@ export default {
   data() {
     return {
       pokemons: {},
+      
     };
   },
   methods: {
     async FetchPoke() {
       const fetchpokemons = await api.get("/pokemon?limit=20");
+      console.log(fetchpokemons)
       this.pokemons = fetchpokemons.data.results;
-      console.log(this.pokemons);
     },
-    async handle(name) {
-      const fetchInfo = await api.get(`pokemon/${name}`)
-      console.log(fetchInfo)
+      image(name) {
+       api.get(`pokemon/${name}`).then((response) => {
+        return response.data.sprites.front_default;
+    
+      })
     }
   },
-  mounted() {
+  created() {
     this.FetchPoke();
-    this.handle();
   },
 };
 </script>

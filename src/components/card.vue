@@ -1,7 +1,7 @@
 <template>
     <div class="card">
        <span>{{name}}</span>
-        <img :src="image">
+        <img :src="image"/>
     </div>
 </template>
 
