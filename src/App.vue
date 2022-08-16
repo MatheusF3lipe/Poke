@@ -3,16 +3,20 @@
     <MyHeader class="header"></MyHeader>
 
     <div class="containerInput">
-      <input type="text" placeholder="Busque aqui seu pokemon" />
+      <input type="text" placeholder="Busque aqui seu pokemon" @input="filter = $event.target.value" />
     </div>
 
     <div class="container">
+      <h3 v-if="!filtro.length">
+        Não há nenhum pokemon com esse nome
+      </h3>
       <cardPokemon
-        v-for="i in pokemons"
+        v-for="i in filtro"
         :key="i.id"
         :name="i.name"
         :image="i.image"
       />
+      
     </div>
   </div>
 </template>
@@ -34,6 +38,8 @@ export default {
   data() {
     return {
       pokemons: [],
+      filter: "",
+      retorno: false,
     };
   },
   async mounted() {
@@ -47,7 +53,18 @@ export default {
       name: `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)} `,
       image: `${IMAGE_URL}${index + 1}.png`,
     }))
-console.log(this.pokemons)
+  },
+  computed: {
+    filtro() {
+      if(this.filter) {
+        const pokemons = this.pokemons.filter((pokemon) => {
+          return pokemon.name.toLowerCase().startsWith(this.filter.toLowerCase());
+        });
+        console.log(pokemons)
+        return pokemons
+      }
+      return this.pokemons;
+    }
   }
 }
 </script>
