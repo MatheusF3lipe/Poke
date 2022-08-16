@@ -17,10 +17,17 @@ export default {
 <style lang="scss" scoped>
 .card {
    border: 2px solid black;
-   width: 320px;
+   width: 300px;
+   display: flex;
+   flex-direction: column;
    span {
     @include nome;
    display: block;
+   padding-top: 20px;
+   
+   }
+   img {
+    width: 300;
    }
 }
 </style>

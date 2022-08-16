@@ -1,7 +1,5 @@
-import axios from 'axios';
-
-const api = axios.create({
-    baseURL: "https://pokeapi.co/api/v2/"
+import axios from "axios";
+import { BASE_URL } from "../constant/axios";
+export const http = axios.create({
+  baseURL: BASE_URL,
 });
-
-export default api
