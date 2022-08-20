@@ -16,6 +16,11 @@
         :name="i.name"
         :image="i.image"
       />
+      <modalPoke 
+      habilidade="Salvinho"
+      habilidade2="Salvinho2"
+      tipo="Pica"
+      />
       
     </div>
   </div>
@@ -24,6 +29,7 @@
 <script>
 import MyHeader from "./components/header";
 import cardPokemon from "./components/card.vue";
+import modalPoke from "./components/modal.vue"
 import { http } from "./services/api";
 import { PAGINATION_MAX } from "./constant/axios";
 import { IMAGE_URL } from "./constant/reference";
@@ -34,6 +40,7 @@ export default {
   components: {
     MyHeader,
     cardPokemon,
+    modalPoke
   },
   data() {
     return {

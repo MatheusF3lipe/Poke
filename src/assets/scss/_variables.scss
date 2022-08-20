@@ -10,3 +10,9 @@ $nome: 20px;
     text-align: center;
 } 
 
+@mixin info {
+    font-family: 'Lilita One', cursive;
+    list-style: none;
+    font-size: 16px;
+}
+
