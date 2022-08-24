@@ -1,5 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card"
+    @click="emitir"
+    >
        <span>{{name}}</span>
         <img :src="image"/>
     </div>
@@ -12,6 +14,16 @@ export default {
         name: String,
         image: String,
     },
+    data() {
+        return {
+            nomePokemon: this.name
+        }
+    },
+    methods: {
+        emitir() {
+            this.$emit("meu-evento", this.nomePokemon)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

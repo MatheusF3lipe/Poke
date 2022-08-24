@@ -1,13 +1,13 @@
 <template>
-    <div class="ContainerPrincipal" v-if="closeModal">
+    <div class="ContainerPrincipal">
         <div class="containerModal">
             <div class="containerImagem">
-                <img src="imagem" alt="Quebrou">
+                <img :src="imagem" alt="Quebrou">
             </div>
             <div class="informacoesPoke">
                 <ul>
                     <li>Habilidade Primária:{{habilidade}}</li>
-                    <li>Habilidade Secundária:{{habilidade2}}</li>
+                    <li>Habilidade Primária:{{habilidade2}}</li>
                     <li>Tipo: {{tipo}}</li>
                 </ul>
             </div>
@@ -23,20 +23,7 @@ export default {
         habilidade2: String,
         tipo: String,
         imagem: String,
-        bo: Boolean
     },
-    data() {
-        return {
-            closeModal: this.bo,
-        }  
-    },
-    methods: {
-        return : {
-            closeModal() {
-                this.$emit(this.closeModal === true)
-            }
-        }
-    }
 }
 </script>
 <style lang="scss" scoped>
@@ -54,20 +41,21 @@ export default {
         padding: 2rem;
         .containerModal {
             max-width: 560px;
-            min-width: 300px;
+            min-width: 250px;
             flex-direction: column;
-            background: #f5f5dc;
+            background: linear-gradient(230deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 4%, rgba(0,212,255,1) 100%);
             flex-wrap: wrap;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             position: relative;
             padding: 1em;
             margin: 0 auto;
+            border-radius: 10%;
             
 
         .containerImagem{
             margin: 0 auto;
-            max-width: 430px;            
+            min-width: 250px;            
             img {
                 width: 100%;
             }
