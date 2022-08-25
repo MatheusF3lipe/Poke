@@ -50,10 +50,11 @@ export default {
             padding: 1em;
             margin: 0 auto;
             border-radius: 10%;
+             animation: move .5s;
             
             span {
-                text-align: left;
-                display: inline-block;
+
+                display: flex;
                 color: whitesmoke;
                 font-size: 25px;
                 cursor: pointer;
@@ -61,6 +62,8 @@ export default {
                 border-radius: 40px;
                 width: 30px;
                 text-align: center;
+               padding: 5px;
+                justify-content: center;
             }
 
         .containerImagem{
@@ -81,6 +84,17 @@ export default {
         }
         }
 
+        @keyframes move {
+  from {
+      opacity: 0;
+      transform: translatey(-2000px);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0);
+
+  }
+}
 
     }
 </style>

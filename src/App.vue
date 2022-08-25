@@ -13,7 +13,11 @@
     <div class="container"
     @click="closemodal"
     >
-      <h3 v-if="!filtro.length">Não há nenhum pokemon com esse nome</h3>
+    <div v-if="!filtro.length" class="gengar">
+       <h3>Não há nenhum pokemon com esse nome :(</h3>
+       <img src="../src/assets/image/gengar.gif" alt="gengar">
+    </div>
+     
       <cardPokemon
         @meu-evento="receberEvent"
         v-for="i in filtro"
@@ -128,6 +132,14 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+
+    .gengar {
+      @include return;
+
+      img {
+        width: 350px
+      }
+    }
   }
 }
 </style>

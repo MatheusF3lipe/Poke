@@ -16,3 +16,11 @@ $nome: 20px;
     font-size: 16px;
 }
 
+
+@mixin return{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+} 
+
