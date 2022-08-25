@@ -11,6 +11,7 @@
     </div>
 
     <div class="container"
+    @click="closemodal"
     >
       <h3 v-if="!filtro.length">Não há nenhum pokemon com esse nome</h3>
       <cardPokemon
@@ -94,6 +95,9 @@ export default {
         this.tipo = r.data.types[0].type.name
         this.image = r.data.sprites.front_default
         this.modalPoke = true
+    },
+    closemodal(){
+      this.modalPoke = false
     }
   },
 };
@@ -114,6 +118,9 @@ export default {
       padding: 10px;
       text-align: center;
       margin-bottom: 30px;
+      border: 2px solid black;
+      border-radius: 30px;
+      
     }
   }
   .container {

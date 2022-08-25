@@ -1,6 +1,7 @@
 <template>
     <div class="ContainerPrincipal">
         <div class="containerModal">
+            <span>x</span>
             <div class="containerImagem">
                 <img :src="imagem" alt="Quebrou">
             </div>
@@ -28,17 +29,15 @@ export default {
 </script>
 <style lang="scss" scoped>
     .ContainerPrincipal {
-        // display: none;
         width: 100%;
         height: 100%;
-        text-align: left;
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(2px);
         z-index: 2;
         position: fixed;
         top: 0;
         left: 0;
-        padding: 2rem;
+        padding-top: 150px;
         .containerModal {
             max-width: 560px;
             min-width: 250px;
@@ -52,6 +51,17 @@ export default {
             margin: 0 auto;
             border-radius: 10%;
             
+            span {
+                text-align: left;
+                display: inline-block;
+                color: whitesmoke;
+                font-size: 25px;
+                cursor: pointer;
+                border: 2px dotted wheat;
+                border-radius: 40px;
+                width: 30px;
+                text-align: center;
+            }
 
         .containerImagem{
             margin: 0 auto;
