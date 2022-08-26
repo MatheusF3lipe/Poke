@@ -58,10 +58,10 @@ export default {
                 color: whitesmoke;
                 font-size: 25px;
                 cursor: pointer;
-                border: 2px dotted wheat;
+                border: 1px solid wheat;
                 border-radius: 40px;
                 width: 30px;
-                text-align: center;
+                // text-align: center;
                padding: 5px;
                 justify-content: center;
             }
